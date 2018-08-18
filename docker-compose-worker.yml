@@ -1,0 +1,13 @@
+version: "3.5"
+
+networks:
+  bazel-remote-executor_remote-server:
+    external: true
+
+services:
+  remote_worker:
+    build: .
+    command: ./worker.sh
+    container_name: remote_worker
+    networks:
+      bazel-remote-executor_remote-server:

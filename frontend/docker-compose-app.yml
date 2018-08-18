@@ -1,0 +1,13 @@
+version: "3.5"
+
+networks:
+  bazel-remote-executor_remote-server:
+    external: true
+
+services:
+  frontend:
+    build: .
+    command: npm run build-frontend
+    container_name: frontend
+    networks:
+      bazel-remote-executor_remote-server:
