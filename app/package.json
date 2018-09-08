@@ -26,8 +26,8 @@
     },
     "scripts": {
         "postinstall": "ngc -p postinstall.tsconfig.json",
-        "serve": "ibazel run //src:devserver",
-        "build": "bazel build //src --verbose_failures",
+        "serve": "yarn build && ibazel run //src:devserver",
+        "build": "bazel build //src",
         "prebuildifier": "bazel build @com_github_bazelbuild_buildtools//buildifier",
         "buildifier": "note: working around https://github.com/alexeagle/angular-bazel-example/issues/60",
         "buildifier": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"./node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier",
