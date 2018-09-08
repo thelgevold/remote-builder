@@ -1,0 +1,9 @@
+build --spawn_strategy=remote --jobs=30 --strategy=AngularTemplateCompile=remote --strategy=TypeScriptCompile=remote --genrule_strategy=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=remote:8980
+run --spawn_strategy=remote --jobs=30 --strategy=AngularTemplateCompile=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=remote:8980
+
+build --symlink_prefix=dist/
+
+test --test_output=errors
+
+# Use the Angular 6 compiler
+build --define=compile=legacy

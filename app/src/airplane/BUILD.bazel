@@ -1,0 +1,23 @@
+
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+ng_module(
+    name = "airplane",
+    srcs = ["airplane.module.ts", "airplane.component.ts"],
+    deps = [
+        "@angular//packages/router",
+        "@rxjs",
+        "//src/airplane/team0",
+        "//src/airplane/team1",
+        "//src/airplane/team2",
+        "//src/airplane/team3",
+        "//src/airplane/team4",
+        "//src/airplane/team5",
+        "//src/airplane/team6",
+        "//src/airplane/team7",
+        "//src/airplane/team8",
+        "//src/airplane/team9"
+    ],
+    tsconfig = "//:tsconfig.json",
+)

@@ -12,6 +12,6 @@ services:
       - "35729:35729"
     container_name: frontend
     volumes:
-      - ../angular-bazel-example:/usr/angular-bazel-example
+      - ../app:/usr/angular-bazel-example
     networks:
        bazel-remote-executor_remote-server:
