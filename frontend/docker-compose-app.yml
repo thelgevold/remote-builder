@@ -9,6 +9,9 @@ services:
     build: .
     ports:
       - "5432:5432"
+      - "35729:35729"
     container_name: frontend
+    volumes:
+      - ../angular-bazel-example:/usr/angular-bazel-example
     networks:
        bazel-remote-executor_remote-server:
