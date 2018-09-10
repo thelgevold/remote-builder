@@ -23,4 +23,4 @@ RUN apt-get update && apt-get install --no-install-recommends yarn
 WORKDIR /usr/angular-bazel-example
 RUN yarn install
 
-CMD [ "yarn", "serve" ]
+CMD [ "tail", "-f", "/dev/null" ]

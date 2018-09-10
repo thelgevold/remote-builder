@@ -16,11 +16,12 @@ RUN apt-get upgrade -y bazel
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
 RUN apt-get -y install nodejs
 
-RUN git clone https://github.com/thelgevold/bazel-buildfarm.git -q
+RUN git clone https://github.com/thelgevold/bazel-buildfarm.git
 
 WORKDIR /usr/bazel-buildfarm
 
-COPY worker.config /usr/bazel-buildfarm/config
+COPY worker.config /usr/bazel-buildfarm/config/worker.config
+COPY server.config /usr/bazel-buildfarm/config/server.config
 
 RUN npm install
 

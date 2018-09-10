@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "bazel-shell": "docker-compose -f frontend/docker-compose-app.yml up",
+    "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up",
+    "start-remote-worker": "docker-compose -f remote-build/docker-compose-worker.yml up",
+    "reset-docker": "docker-compose -f remote-build/docker-compose-worker.yml down && docker-compose -f remote-build/docker-compose-server.yml down && docker-compose -f frontend/docker-compose-app.yml down"
+  }
+}
+
+
+
