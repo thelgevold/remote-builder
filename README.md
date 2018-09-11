@@ -2,7 +2,7 @@ This is a POC repo for remote Bazel builds with docker.
 
 The project uses BuildFarm to run a remote build of an Angular application.
 
-Each container installs Ubuntu wiht the latest version of Bazel
+Each container installs Ubuntu with the latest version of Bazel
 
 The Angular source code is shared between the host computer and Docker as a volume.
 
