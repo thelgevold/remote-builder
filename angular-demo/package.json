@@ -26,7 +26,6 @@
     },
     "scripts": {
         "postinstall": "ngc -p postinstall.tsconfig.json",
-        "bazel": "docker exec -it frontend bash",
         "prebuildifier": "bazel build @com_github_bazelbuild_buildtools//buildifier",
         "format": "git-clang-format"
     }
