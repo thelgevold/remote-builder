@@ -9,10 +9,10 @@ The Angular source code is shared between the host computer and Docker as a volu
 Instructions:
 1) Run yarn install in ./angular-demo
 
-2) Terminal1: yarn start-remote-server  #Bazel remote server
+2) Terminal1: yarn start-remote-server  
 
-3) Terminal2: yarn start-remote-worker  #Bazel remote worker
+3) Terminal2: yarn start-remote-worker  
 
-4) Terminal3: yarn start-frontend       #ibazel build of angular demo app
+4) Terminal3: yarn start-frontend
 
 5) Open the app in a browser from http://localhost:5432
