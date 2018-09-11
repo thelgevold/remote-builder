@@ -20,9 +20,11 @@ RUN git clone https://github.com/thelgevold/bazel-buildfarm.git
 
 WORKDIR /usr/bazel-buildfarm
 
-COPY worker.config /usr/bazel-buildfarm/config/worker.config
-COPY server.config /usr/bazel-buildfarm/config/server.config
+RUN git checkout angular
 
 RUN npm install
+
+COPY worker.config /usr/bazel-buildfarm/config/worker.config
+COPY server.config /usr/bazel-buildfarm/config/server.config
 
 ENTRYPOINT [ ]

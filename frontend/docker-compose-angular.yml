@@ -5,12 +5,12 @@ networks:
     external: true
 
 services:
-  frontend:
+  angular:
     build: .
     ports:
       - "5432:5432"
       - "35729:35729"
-    container_name: frontend
+    container_name: angular
     volumes:
       - ../angular-demo:/usr/angular-bazel-example
     networks:
