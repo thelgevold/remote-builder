@@ -1,0 +1,18 @@
+version: "3.5"
+
+networks:
+  remote-build_remote-server:
+    external: true
+
+services:
+  react:
+    command: bash -c "bazel build ... --verbose_failures"
+    build: .
+    ports:
+      - "9999:9999"
+      - "8080:8080"
+    container_name: react
+    volumes:
+      - ../react-demo:/usr/demo
+    networks:
+       remote-build_remote-server:

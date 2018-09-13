@@ -13,6 +13,6 @@ Instructions:
 
 3) Terminal2: yarn start-remote-worker  #Bazel remote worker
 
-4) Terminal3: yarn start-angular       #ibazel build of angular demo app
+4) Terminal3: yarn start-angular        #bazel build of angular demo app
 
 5) Open the app in a browser from http://localhost:5432

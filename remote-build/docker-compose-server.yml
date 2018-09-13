@@ -7,7 +7,7 @@ networks:
 services:
   remote_server:
     build: .
-    command: ./server.sh
+    command: bash -c "bazel build //src/main/java/build/buildfarm:buildfarm-server && bazel-bin/src/main/java/build/buildfarm/buildfarm-server examples/server.config"
     container_name: remote_server
     networks:
       remote-server:

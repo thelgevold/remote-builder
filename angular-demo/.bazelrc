@@ -1,8 +1,21 @@
-build --jobs=20 --spawn_strategy=remote --genrule_strategy=remote --strategy=Javac=remote --strategy=Closure=remote --remote_executor=remote:8980 
+#--host_jvm_args=-Dbazel.DigestFunction=SHA256
+
+build --spawn_strategy=remote
+build --strategy=Javac=remote
+build --strategy=Closure=remote
+build --genrule_strategy=remote
+build --jobs=10
+
+build --remote_executor=remote:8980 
+build --remote_cache=remote:8980
 
 build --strategy=AngularTemplateCompile=remote --strategy=TypeScriptCompile=remote
+
+build --remote_instance_name=default_memory_instance
+build --experimental_strict_action_env=true
 
 build --symlink_prefix=dist/
 
 # Use the Angular 6 compiler
 build --define=compile=legacy
+build --define=ivy=false

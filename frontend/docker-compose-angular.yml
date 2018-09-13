@@ -7,11 +7,12 @@ networks:
 services:
   angular:
     build: .
+    command: bash -c "bazel run //src:devserver --verbose_failures"
     ports:
       - "5432:5432"
       - "35729:35729"
     container_name: angular
     volumes:
-      - ../angular-demo:/usr/angular-bazel-example
+      - ../angular-demo:/usr/demo
     networks:
        remote-build_remote-server:
