@@ -1,5 +1,4 @@
 import { Component, NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
 
 import { Module_airplane_team0_mod0 } from "./mod0/module";
 import { Module_airplane_team0_mod1 } from "./mod1/module";

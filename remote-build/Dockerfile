@@ -31,8 +31,6 @@ RUN git clone https://github.com/bazelbuild/bazel-buildfarm.git
 
 WORKDIR /usr/bazel-buildfarm
 
-RUN npm install
-
 WORKDIR /usr/bazel
 
 WORKDIR /usr/bazel-buildfarm
