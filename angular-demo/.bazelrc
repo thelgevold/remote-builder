@@ -1,10 +1,10 @@
-#--host_jvm_args=-Dbazel.DigestFunction=SHA256
+--host_jvm_args=-Dbazel.DigestFunction=SHA256
 
 build --spawn_strategy=remote
 build --strategy=Javac=remote
 build --strategy=Closure=remote
 build --genrule_strategy=remote
-build --jobs=10
+build --jobs=20
 
 build --remote_executor=remote:8980 
 build --remote_cache=remote:8980
