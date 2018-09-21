@@ -24,7 +24,7 @@ The site can be served from localhost:3001
 
 Please Note: The first build of the containers will take a long time (Get a coffee while you wait...)
 
-The containers do the following steps:
+The containers perform the following steps:
 - Install Ubuntu
 - Build Bazel from source (master)
 - Build Buildfarm server + worker from source (master)
