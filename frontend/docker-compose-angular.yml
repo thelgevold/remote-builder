@@ -5,13 +5,13 @@ networks:
     external: true
 
 services:
-  angular:
+  angular1:
     build: .
-    command: bash -c "bazel run //src:devserver --verbose_failures"
+    command: bash -c "tail -f /dev/null"
     ports:
-      - "5432:5432"
+      - "3001:5432"
       - "35729:35729"
-    container_name: angular
+    container_name: angular1
     volumes:
       - ../angular-demo:/usr/demo
     networks:

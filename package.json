@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "bazel-terminal1": "docker exec -it angular1 bash",
+    "bazel-terminal2": "docker exec -it angular2 bash",
     "start-angular": "docker-compose -f frontend/docker-compose-angular.yml up",
     "start-react": "docker-compose -f frontend/docker-compose-react.yml up",
     "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up",
