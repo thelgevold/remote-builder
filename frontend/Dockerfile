@@ -1,36 +1,38 @@
-FROM ubuntu:latest
+FROM launcher.gcr.io/google/rbe-ubuntu16-04
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 WORKDIR /usr
 
 RUN apt-get update
-RUN apt-get -y install build-essential openjdk-8-jdk python zip unzip
+
+RUN apt-get install build-essential libssl-dev -y
 
 RUN apt-get -y install curl
 RUN apt-get -y install gnupg
 RUN apt-get -y install git
 RUN apt-get -y install nano
 
-#Temporarily install the latest released version of Bazel (used to build bazel from source)
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee tee /etc/apt/sources.list.d/bazel.list
 RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
 RUN apt-get update && apt-get -y install bazel
 RUN apt-get upgrade -y bazel
 
-#Build Bazel from source
-RUN git clone https://github.com/bazelbuild/bazel.git --v
-WORKDIR /usr/bazel
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 8.9.4
 
-RUN bazel build //src:bazel
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
 
-RUN cp bazel-bin/src/bazel /usr/bin/bazel
-RUN cp bazel-bin/src/bazel /usr/local/bin
+RUN source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
-RUN apt-get -y install nodejs
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install --no-install-recommends yarn
+RUN apt-get install npm -y
+RUN npm i yarn -g
 
 RUN yarn global add @bazel/ibazel
 
