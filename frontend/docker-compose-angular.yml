@@ -16,3 +16,11 @@ services:
       - ../angular-demo:/usr/demo
     networks:
        remote-build_remote-server:
+  angular2:
+    build: .
+    command: bash -c "tail -f /dev/null"
+    container_name: angular2
+    volumes:
+      - ../angular-demo:/usr/demo
+    networks:
+       remote-build_remote-server:      

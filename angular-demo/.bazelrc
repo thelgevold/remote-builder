@@ -8,9 +8,9 @@ build --strategy=AngularTemplateCompile=remote
 build --strategy=TypeScriptCompile=remote
 
 #Increase this number to run more consurrent tasks
-build --jobs=20
+build --jobs=8
 
-build --remote_executor=remote:8980
+build --remote_executor=localhost:8980
 build --remote_timeout=3600
 
 build --experimental_strict_action_env=true
