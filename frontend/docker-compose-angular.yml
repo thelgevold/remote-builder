@@ -5,15 +5,25 @@ networks:
     external: true
 
 services:
-  angular:
+  angular_a:
     build: .
     command: bash -c "tail -f /dev/null"
     ports:
-      - "3001:5432"
+      - "3010:5432"
       - "35729:35729"
-    container_name: angular
+    container_name: angular_a
     volumes:
       - ../angular-demo:/usr/demo
     networks:
        remote-build_remote-server:
+  angular_b:
+    build: .
+    command: bash -c "tail -f /dev/null"
+    ports:
+      - "3011:5432"
+    container_name: angular_b
+    volumes:
+      - ../angular-demo:/usr/demo
+    networks:
+       remote-build_remote-server:      
     
