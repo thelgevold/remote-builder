@@ -10,7 +10,7 @@ import {FriendComponent8} from './friend8/friend';
 import {FriendComponent9} from './friend9/friend';
 import {FriendComponent10} from './friend10/friend';
 
-import {FriendService} from './friend-service';
+import {FriendService} from '../../../config/friend-service';
 import {IFriend, IFriends} from '../../../../model';
 
 export class FriendsList37Component extends React.Component<IFriends, IFriends> {

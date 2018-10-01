@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "bazel-terminal1": "docker exec -it angular1 bash",
-    "bazel-terminal2": "docker exec -it angular2 bash",
-    "start-angular": "docker-compose -f frontend/docker-compose-angular.yml up",
-    "start-react": "docker-compose -f frontend/docker-compose-react.yml up",
-    "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up",
+    "angular-terminal": "docker exec -it angular1 bash",
+    "react-terminal": "docker exec -it react1 bash",
+    "start-angular": "docker-compose -f frontend/docker-compose-angular.yml up -d",
+    "start-react": "docker-compose -f frontend/docker-compose-react.yml up -d",
+    "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up && npm run start-angular && npm run start-react",
     "start-remote-worker": "docker-compose -f remote-build/docker-compose-worker.yml up",
     "reset-docker": "docker-compose -f remote-build/docker-compose-worker.yml down && docker-compose -f remote-build/docker-compose-server.yml down && docker-compose -f frontend/docker-compose-angular.yml down && docker-compose -f frontend/docker-compose-react.yml down"
   }

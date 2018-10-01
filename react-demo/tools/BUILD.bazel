@@ -1,0 +1,21 @@
+# FROM: https://github.com/angular/angular/blob/5241ea086d5def1923ca500ca415e5f167207960/tools/BUILD.bazel
+exports_files(["tsconfig.json"])
+
+# The toolchain container used for execution is defined in the target indicated
+# by "extra_execution_platforms", "host_platform" and "platforms".
+# If you are using your own toolchain container, you need to create a platform
+# target with "constraint_values" that allow for the toolchain specified with
+# "extra_toolchains" to be selected (given constraints defined in
+# "exec_compatible_with").
+# More about platforms: https://docs.bazel.build/versions/master/platforms.html
+platform(
+    name = "rbe_ubuntu1604-react",
+    constraint_values = [
+        "@bazel_tools//platforms:x86_64",
+        "@bazel_tools//platforms:linux",
+        "@bazel_tools//tools/cpp:clang",
+        "@bazel_toolchains//constraints:xenial",
+    ],
+   
+    visibility = ["//visibility:public"],
+)

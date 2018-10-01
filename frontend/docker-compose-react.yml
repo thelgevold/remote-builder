@@ -5,14 +5,21 @@ networks:
     external: true
 
 services:
-  react:
-    command: bash -c "bazel build ... --verbose_failures"
+  react1:
+    command: bash -c "tail -f /dev/null"
     build: .
     ports:
       - "9999:9999"
-      - "8080:8080"
-    container_name: react
+    container_name: react1
     volumes:
       - ../react-demo:/usr/demo
     networks:
        remote-build_remote-server:
+  react2:
+    command: bash -c "tail -f /dev/null"
+    build: .
+    container_name: react2
+    volumes:
+      - ../react-demo:/usr/demo
+    networks:
+       remote-build_remote-server:     
