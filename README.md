@@ -14,6 +14,8 @@ Instructions:
 
 This POC contains a large React application as well as a medium sided Angular application.
 
-Build the Angular app by running `yarn start-angular-app`. Alternatively you can build the React app by running `yarn start-react-app` 
+Build the Angular app by running `yarn start-angular-app`. 
+
+Alternatively you can build the React app by running `yarn start-react-app` 
 
 The React app is served from localhost:9999. The Angular application is served from localhost:3010
