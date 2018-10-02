@@ -1,5 +1,7 @@
 This is a POC repo for remote Bazel builds with docker.
 
+Blog post with some more info: http://www.syntaxsuccess.com/viewarticle/remote-bazel-builds-with-buildfarm
+
 The project uses BuildFarm to run a remote build of an Angular application and a React application.
 
 Each container installs Ubuntu:rbe with the latest version of Bazel.
