@@ -1,10 +1,12 @@
 {
   "scripts": {
-    "angular-terminal": "docker exec -it angular1 bash",
-    "react-terminal": "docker exec -it react1 bash",
+    "start-angular-app": "docker exec -it angular_a bash -c \"ibazel run //src:devserver\" ",
+    "start-angular-app2": "docker exec -it angular_b bash -c \"ibazel run //src:devserver\" ",
+    "start-react-app": "docker exec -it react1 bash -c \"ibazel run //src/frontend:devserver\" ",
+    "start-react-app2": "docker exec -it react2 bash -c \"ibazel run //src/frontend:devserver\" ",
     "start-angular": "docker-compose -f frontend/docker-compose-angular.yml up -d",
     "start-react": "docker-compose -f frontend/docker-compose-react.yml up -d",
-    "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up && npm run start-angular && npm run start-react",
+    "start-remote-server": "npm run start-angular && npm run start-react && docker-compose -f remote-build/docker-compose-server.yml up",
     "start-remote-worker": "docker-compose -f remote-build/docker-compose-worker.yml up",
     "reset-docker": "docker-compose -f remote-build/docker-compose-worker.yml down && docker-compose -f remote-build/docker-compose-server.yml down && docker-compose -f frontend/docker-compose-angular.yml down && docker-compose -f frontend/docker-compose-react.yml down"
   }
